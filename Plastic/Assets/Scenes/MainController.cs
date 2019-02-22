@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class MainController : MonoBehaviour
 {
     public InventorySlot activeItem;
+    public Plastic plasticAmount;
+    public List<Item> plasticItems;
     // Start is called before the first frame update
     void Start()
     {
-        Inventory.Testing();
+        //Inventory.Testing();
     }
 
     // Update is called once per frame
@@ -25,5 +27,9 @@ public class MainController : MonoBehaviour
             s.item = null;
             s.gameObject.GetComponentsInChildren<Image>()[1].enabled = false;
         }
+    }
+    void CreatePlasticList()
+    {
+        plasticItems.Add(new Item("apple", 0.2f));
     }
 }

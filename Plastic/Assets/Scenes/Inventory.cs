@@ -25,7 +25,7 @@ public class Inventory : MonoBehaviour
 
     public static void Testing()
     {
-        Item apple = new Item();
+        Item apple = new Item("apple", 0.2f);
         apple.name = "apple";
         Add(apple, 5, false);
     }

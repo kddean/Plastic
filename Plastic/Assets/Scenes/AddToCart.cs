@@ -20,6 +20,7 @@ public class AddToCart : MonoBehaviour
     private void OnMouseDown()
     {
         Inventory.Add(apple,1, false);
+        GameObject.FindObjectOfType<Plastic>().UpdatePlasticMeter(5);
         Destroy(gameObject);
     }
 }
