@@ -19,6 +19,7 @@ public class AddToInventory : MonoBehaviour
     void Start()
     {
         mc = GameObject.FindObjectOfType<MainController>();
+        savers = new Dictionary<string, Item>();
         CreateItems();
     }
 
@@ -35,9 +36,9 @@ public class AddToInventory : MonoBehaviour
 
     void CreateItems()
     {
-        savers.Add("tupperware", new Item("tupperware", "savers/tupperwarePrefab"));
-        savers.Add("bags", new Item("bags", ""));
-        savers.Add("mesh", new Item("mesh", ""));
-        savers.Add("jar", new Item("jar", ""));
+        savers.Add("tupperware", new Item("tupperware", "savers/tupperware"));
+        savers.Add("bags", new Item("bags", "savers/reusebag"));
+        savers.Add("mesh", new Item("mesh", "savers/meshbag"));
+        savers.Add("jar", new Item("jar", "savers/jar"));
     }
 }
