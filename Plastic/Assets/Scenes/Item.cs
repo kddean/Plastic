@@ -14,6 +14,11 @@ public class Item
         this.name = name;
         this.plasticAmount = cost;
     }
+    public Item(string name, string imagePath)
+    {
+        this.name = name;
+        this.imagePath = imagePath;
+    }
 
     public string Name
     {

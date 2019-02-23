@@ -47,10 +47,14 @@ public class Info : MonoBehaviour
         plasticInfo.Add("eggs", "");
         plasticInfo.Add("lettuce","");
         plasticInfo.Add("strawberries","");
+        plasticInfo.Add("milk", "");
+        plasticInfo.Add("nuts", "");
+        plasticInfo.Add("cookies", "");
 
         noPlasticInfo.Add("broth", "");
         noPlasticInfo.Add("beef", "");
         noPlasticInfo.Add("lettuce", "");
         noPlasticInfo.Add("eggs", "");
+        noPlasticInfo.Add("nuts", "");
     }
 }
