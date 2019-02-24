@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
+    MainController mc;
 
     Transform startingParent;
     Transform canvas;
@@ -50,6 +51,7 @@ public class InventorySlot : MonoBehaviour
     void Start()
     {
         //rl = GameObject.FindGameObjectWithTag("loader").GetComponent<ResourceLoader>();
+        mc = GameObject.Find("MainController").GetComponent<MainController>();
     }
     void Update()
     {
@@ -61,7 +63,7 @@ public class InventorySlot : MonoBehaviour
 
     public void SetActive()
     {
-        
+        mc.activeItem = this;
         
     }
 
