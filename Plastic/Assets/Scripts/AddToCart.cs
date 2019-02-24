@@ -5,14 +5,12 @@ using UnityEngine;
 public class AddToCart : MonoBehaviour
 {
     MainController mc;
-    public Item apple;
     public bool hasPlastic;
     // Start is called before the first frame update
     void Start()
     {
         mc = GameObject.FindObjectOfType<MainController>();
-        apple.name = "apple";
-        apple.plasticAmount = 0.2f;
+
     }
 
     // Update is called once per frame

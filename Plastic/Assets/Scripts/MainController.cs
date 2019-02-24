@@ -23,6 +23,7 @@ public class MainController : MonoBehaviour
     public Plastic plasticAmount;
     public Dictionary<string, Item> plasticItems;
     public Dictionary<string, Item> nonplasticItems;
+    
 
 
     // Start is called before the first frame update
@@ -42,6 +43,7 @@ public class MainController : MonoBehaviour
         //Inventory.Testing();
         plasticItems = new Dictionary<string, Item>();
         nonplasticItems = new Dictionary<string, Item>();
+        
         CreatePlasticLists();
     }
 
@@ -62,6 +64,8 @@ public class MainController : MonoBehaviour
             s.gameObject.GetComponentsInChildren<Image>()[1].enabled = false;
         }
     }
+
+    
     void CreatePlasticLists()
     {
         plasticItems.Add("apples", new Item("apples", 0.01f));
@@ -156,6 +160,31 @@ public class MainController : MonoBehaviour
             drygoodsButton.enabled = true;
             produceButton.gameObject.SetActive(true);
             produceButton.enabled = true;
+        }
+    }
+
+    public void PlasticFree(int i)
+    {
+        if(activeItem.item.item.name == "jar")
+        {
+
+
+        }
+        else if (activeItem.item.item.name == "mesh")
+        {
+
+        }
+        else if (activeItem.item.item.name == "bags")
+        {
+
+        }
+        else if (activeItem.item.item.name == "tupperware")
+        {
+
+        }
+        else
+        {
+
         }
     }
 }

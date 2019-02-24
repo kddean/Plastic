@@ -6,8 +6,6 @@ public class AddToInventory : MonoBehaviour
 {
     MainController mc;
     Dictionary<string, Item> savers;
-    Item tupperware;
-    Item bags;
 
     //Produce
     //Dry Goods
@@ -32,6 +30,7 @@ public class AddToInventory : MonoBehaviour
     private void OnMouseDown()
     {
         Inventory.Add(savers[this.gameObject.name], 1, false);
+        mc.GetComponent<Info>().UpdateInventoryText(this.gameObject.name);
     }
 
     void CreateItems()
