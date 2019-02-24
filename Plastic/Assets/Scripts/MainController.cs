@@ -23,12 +23,14 @@ public class MainController : MonoBehaviour
     public Plastic plasticAmount;
     public Dictionary<string, Item> plasticItems;
     public Dictionary<string, Item> nonplasticItems;
+    public Dictionary<string, Item> saverItems;
     
 
 
     // Start is called before the first frame update
     void Start()
     {
+        activeItem = null;
         main.enabled = false;
         start.enabled = true;
         currentCamera = start;
@@ -43,6 +45,7 @@ public class MainController : MonoBehaviour
         //Inventory.Testing();
         plasticItems = new Dictionary<string, Item>();
         nonplasticItems = new Dictionary<string, Item>();
+        saverItems = new Dictionary<string, Item>();
         
         CreatePlasticLists();
     }
@@ -79,13 +82,18 @@ public class MainController : MonoBehaviour
         plasticItems.Add("cookies", new Item("cookies", 0.03f));
         plasticItems.Add("boxcookies", new Item("boxcookies", 0.02f));
         plasticItems.Add("malk", new Item("malk", 0.02f));
-
+        plasticItems.Add("bagnuts", new Item("bagnuts", 0.02f));
 
         nonplasticItems.Add("beef", new Item("beef", 0));
         nonplasticItems.Add("lettuce", new Item("lettuce", 0));
         nonplasticItems.Add("broth", new Item("broth", 0));
         nonplasticItems.Add("eggs", new Item("eggs", 0));
         nonplasticItems.Add("nuts", new Item("nuts", 0.03f));
+
+        saverItems.Add("tupperware", new Item("tupperware", "savers/tupperware"));
+        saverItems.Add("bags", new Item("bags", "savers/reusebag"));
+        saverItems.Add("mesh", new Item("mesh", "savers/meshbag"));
+        saverItems.Add("jar", new Item("jar", "savers/jar"));
 
     }
 
@@ -168,26 +176,31 @@ public class MainController : MonoBehaviour
 
     public void PlasticFree(int i)
     {
-        if(activeItem.item.item.name == "jar")
+        if (activeItem.item.item.name == "jar" && i == 1)
         {
-
-
+            this.GetComponent<Info>().UpdateSaverText(activeItem.item.item);
+            GetComponent<Cart>().cart.Add(saverItems["jar"]);
+            Debug.Log("That's alot of nuts");
         }
         else if (activeItem.item.item.name == "mesh")
         {
-
+            this.GetComponent<Info>().UpdateSaverText(activeItem.item.item);
+            GetComponent<Cart>().cart.Add(saverItems["mesh"]);
         }
         else if (activeItem.item.item.name == "bags")
         {
-
+            this.GetComponent<Info>().UpdateSaverText(activeItem.item.item);
+            GetComponent<Cart>().cart.Add(saverItems["bags"]);
         }
-        else if (activeItem.item.item.name == "tupperware")
+        else if (activeItem.item.item.name == "tupperware" && i == 0)
         {
-
+            this.GetComponent<Info>().UpdateSaverText(activeItem.item.item);
+            GetComponent<Cart>().cart.Add(saverItems["tupperware"]);
+            Debug.Log("Saved with Tupperware");
         }
         else
         {
-
+            Debug.Log("Not Saving");
         }
     }
 }

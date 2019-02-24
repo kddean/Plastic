@@ -31,7 +31,7 @@ public class AddToCart : MonoBehaviour
         }
         else
         {
-            mc.GetComponent<Info>().UpdateText(true, mc.nonplasticItems[this.gameObject.name]);
+            mc.GetComponent<Info>().UpdateText(false, mc.nonplasticItems[this.gameObject.name]);
             mc.GetComponent<Cart>().cart.Add(mc.nonplasticItems[this.gameObject.name]);
             Destroy(this.gameObject);
         }

@@ -11,6 +11,7 @@ public class Info : MonoBehaviour
     Dictionary<string, string> plasticInfo;
     Dictionary<string, string> noPlasticInfo;
     Dictionary<string, string> inventoryInfo;
+    Dictionary<string, string> saverInfo;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,10 @@ public class Info : MonoBehaviour
         plasticInfo = new Dictionary<string, string>();
         noPlasticInfo = new Dictionary<string, string>();
         inventoryInfo = new Dictionary<string, string>();
+        saverInfo = new Dictionary<string, string>();
         CreateInfoDictionaries();
+        CreateInventoryDictionary();
+        CreateSaverDictionary();
     }
 
     // Update is called once per frame
@@ -44,6 +48,10 @@ public class Info : MonoBehaviour
     {
         dia.GetComponentInChildren<Text>().text = inventoryInfo[s];
     }
+    public void UpdateSaverText(Item item)
+    {
+        dia.GetComponentInChildren<Text>().text = saverInfo[item.name];
+    }
 
     void CreateInfoDictionaries()
     {
@@ -58,6 +66,7 @@ public class Info : MonoBehaviour
         plasticInfo.Add("cookies", "These cookies are packaged with a non-recyclable plastic wrapper, as well as an interior tray that's also made of plastic.");
         plasticInfo.Add("boxcookies", "At first glance, it looks like these cookies are plastic-free, unfortunately, most cookies and crackers have an interior plastic bag that cannot be recycled.");
         plasticInfo.Add("malk", "While these cartons look like they use less plastic at first glance, they're all lined with plastic and include a plastic spout and lid. Unfortunately, since these cartons are made from a mix of plastic and cardboard, they can almost never be recycled.");
+        plasticInfo.Add("bagnuts", "Buying snacks and ingredients in bulk helps reduce plastic. Instead of purchasing a plastic jar or canister, you'll just take home a thin plastic bag. However, is there a way to reduce your plastic waste further?");
 
         noPlasticInfo.Add("broth", "Cans maybe a little less convenient, but don't contain any plastic. In addition, the tin used to make the cans is easy and profitable to recycle. ");
         noPlasticInfo.Add("beef", "Most stores are happy to package meat and fish for you at the meat counter. This not only reduces your plastic consumption, but also lets you pick exactly how much you want!");
@@ -72,5 +81,12 @@ public class Info : MonoBehaviour
         inventoryInfo.Add("mesh", "A thin mesh bag ");
         inventoryInfo.Add("bags", "A reusable grocery bag you got at an earth day celebration a few years ago");
         inventoryInfo.Add("tupperware", "A good-quality glass container with a plastic snap top.");
+    }
+    void CreateSaverDictionary()
+    {
+        saverInfo.Add("tupperware", "Most stores are happy to package meat and fish for you at the meat counter. This not only reduces your plastic consumption, but also lets you pick exactly how much you want!");
+        saverInfo.Add("bags", "Using a reusable produce bag helps keep your cart neat while reducing plastic, although you can also place your produce directly in your cart! However, the stickers on these apples are still made of plastic.");
+        saverInfo.Add("mesh", "");
+        saverInfo.Add("jar", "Most stores allow you to bring your own bags or jars to their bulk sections as long as your record the weight of your container first. Doing this almost completely eradicates your plastic waste! ");
     }
 }
