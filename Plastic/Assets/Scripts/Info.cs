@@ -41,20 +41,20 @@ public class Info : MonoBehaviour
 
     void CreateInfoDictionaries()
     {
-        plasticInfo.Add("apples", "Apples come with plastic stickers");
-        plasticInfo.Add("beef", "");
-        plasticInfo.Add("broth", "");
-        plasticInfo.Add("eggs", "");
-        plasticInfo.Add("lettuce","");
-        plasticInfo.Add("strawberries","");
-        plasticInfo.Add("milk", "");
-        plasticInfo.Add("nuts", "");
-        plasticInfo.Add("cookies", "");
+        plasticInfo.Add("apples", "Most people place their produce in the plastic bags provided by grocery stores without even thinking about it. Do you really need that extra bag?");
+        plasticInfo.Add("beef", "Most packaged meats in stores are placed on styrofoam trays and wrapped in cling wrap. Neither of these plastics are recyclable. Do you think there's way to purchase meat without using single-use plastics next time?");
+        plasticInfo.Add("broth", "While it may not look like it, these cartons are lined with plastic. Because these cartons are made out of mixed materials, they cannot be recycled.");
+        plasticInfo.Add("eggs", "Unfortunately, most 'free range' and 'organic' eggs are sold in styrofoam or plastic. These materials will never fully break down, and will likely end up in the ocean.");
+        plasticInfo.Add("lettuce", "Many greens sold by chain grocery stores come pre-wrapped in plastic. Certain varieties are easier to buy plastic-free than others.");
+        plasticInfo.Add("strawberries", "It's almost impossible to buy berries in grocery stores without bringing home some plastic too. If possible, try to get your berries at local farmer's markets, where they're more frequently found in cardboard cartons.");
+        plasticInfo.Add("milk", "It's very difficult to buy milk without also buying plastic. While milk jugs are easy to recycle, plastic recycling is inefficient and unprofitable since a recycled plastic degrades quickly. ");
+        plasticInfo.Add("nuts", "While buying pre-packaged snacks off the shelf might be easy, there's probably a way to reduce your plastic consumption next time...");
+        plasticInfo.Add("cookies", "These cookies are packaged with a non-recyclable plastic wrapper, as well as an interior tray that's also made of plastic.");
 
-        noPlasticInfo.Add("broth", "");
-        noPlasticInfo.Add("beef", "");
-        noPlasticInfo.Add("lettuce", "");
-        noPlasticInfo.Add("eggs", "");
-        noPlasticInfo.Add("nuts", "");
+        noPlasticInfo.Add("broth", "Cans maybe a little less convenient, but don't contain any plastic. In addition, the tin used to make the cans is easy and profitable to recycle. ");
+        noPlasticInfo.Add("beef", "Most stores are happy to package meat and fish for you at the meat counter. This not only reduces your plastic consumption, but also lets you pick exactly how much you want!");
+        noPlasticInfo.Add("lettuce", "While the twist-ties holding greens together in stores are frequently made of plastic, buying unwrapped lettuce can significantly reduce your consumption of single-use plastics.");
+        noPlasticInfo.Add("eggs", "Cardboard egg cartons can be recycled, and since they're not made of plastic, they eventually biodegrade anyways.");
+        noPlasticInfo.Add("nuts", "Most stores allow you to bring your own bags or jars to their bulk sections as long as your record the weight of your container first. Doing this almost completely eradicates your plastic waste! ");
     }
 }

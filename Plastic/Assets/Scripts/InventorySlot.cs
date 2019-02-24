@@ -64,6 +64,7 @@ public class InventorySlot : MonoBehaviour
     public void SetActive()
     {
         mc.activeItem = this;
+        //mc.GetComponent<Info>().dia = 
         
     }
 
