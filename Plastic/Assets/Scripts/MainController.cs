@@ -24,6 +24,8 @@ public class MainController : MonoBehaviour
     public Dictionary<string, Item> plasticItems;
     public Dictionary<string, Item> nonplasticItems;
     public Dictionary<string, Item> saverItems;
+    //public GameObject shoppingList;
+    public Text[] shoppingList = new Text[9];
     
 
 
@@ -201,6 +203,45 @@ public class MainController : MonoBehaviour
         else
         {
             Debug.Log("Not Saving");
+        }
+    }
+    public void crossOfList(string s)
+    {
+        if(s == "apples")
+        {
+            DestroyImmediate(shoppingList[0]);
+        }
+        else if (s.Contains("lettuce"))
+        {
+            DestroyImmediate(shoppingList[1]);
+        }
+        else if (s.Contains("nuts"))
+        {
+            DestroyImmediate(shoppingList[2]);
+        }
+        else if (s.Contains("milk") || s.Contains("malk"))
+        {
+            DestroyImmediate(shoppingList[3]);
+        }
+        else if (s.Contains("cookies"))
+        {
+            DestroyImmediate(shoppingList[4]);
+        }
+        else if (s.Contains("beef"))
+        {
+            DestroyImmediate(shoppingList[5]);
+        }
+        else if (s.Contains("broth"))
+        {
+            DestroyImmediate(shoppingList[6]);
+        }
+        else if (s.Contains("strawberries"))
+        {
+            DestroyImmediate(shoppingList[7]);
+        }
+        else if (s.Contains("eggs"))
+        {
+            DestroyImmediate(shoppingList[8]);
         }
     }
 }

@@ -27,12 +27,14 @@ public class AddToCart : MonoBehaviour
             GameObject.FindObjectOfType<Plastic>().UpdatePlasticMeter(mc.plasticItems[this.gameObject.name].plasticAmount);
             mc.GetComponent<Info>().UpdateText(true, mc.plasticItems[this.gameObject.name]);
             mc.GetComponent<Cart>().cart.Add(mc.plasticItems[this.gameObject.name]);
+            mc.crossOfList(this.gameObject.name);
             Destroy(this.gameObject);
         }
         else
         {
             mc.GetComponent<Info>().UpdateText(false, mc.nonplasticItems[this.gameObject.name]);
             mc.GetComponent<Cart>().cart.Add(mc.nonplasticItems[this.gameObject.name]);
+            mc.crossOfList(this.gameObject.name);
             Destroy(this.gameObject);
         }
     }
