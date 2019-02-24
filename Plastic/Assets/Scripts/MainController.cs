@@ -77,6 +77,9 @@ public class MainController : MonoBehaviour
         plasticItems.Add("milk", new Item("milk", 0.3f));
         plasticItems.Add("nuts", new Item("nuts", 0.03f));
         plasticItems.Add("cookies", new Item("cookies", 0.03f));
+        plasticItems.Add("boxcookies", new Item("boxcookies", 0.02f));
+        plasticItems.Add("malk", new Item("malk", 0.02f));
+
 
         nonplasticItems.Add("beef", new Item("beef", 0));
         nonplasticItems.Add("lettuce", new Item("lettuce", 0));
