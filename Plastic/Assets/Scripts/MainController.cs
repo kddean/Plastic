@@ -252,13 +252,19 @@ public class MainController : MonoBehaviour
     }
     public void CheckOut()
     {
-        if (activeItem.item.item.name == "bags")
+        if( activeItem == null)
+        {
+            GetComponent<Info>().dia.GetComponentInChildren<Text>().text = "You forgot your reuseablebags and had to use plastic";
+            GameObject.FindObjectOfType<Plastic>().UpdatePlasticMeter(0.5f);
+        }
+        else if (activeItem.item.item.name == "bags")
         {
             this.GetComponent<Info>().UpdateSaverText(activeItem.item.item);
 
         }
         else
         {
+            GetComponent<Info>().dia.GetComponentInChildren<Text>().text = "You forgot your reuseablebags and had to use plastic";
             GameObject.FindObjectOfType<Plastic>().UpdatePlasticMeter(0.5f);
         }
     }
