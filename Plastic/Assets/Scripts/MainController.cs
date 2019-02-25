@@ -148,6 +148,7 @@ public class MainController : MonoBehaviour
             fridgeButton.enabled = true;
             drygoodsButton.gameObject.SetActive(true);
             drygoodsButton.enabled = true;
+            EnabledCheckoutButton();
         }
         else if(i == 2)
         {
@@ -156,6 +157,7 @@ public class MainController : MonoBehaviour
             fridgeButton.enabled = true;
             produceButton.gameObject.SetActive(true);
             produceButton.enabled = true;
+            EnabledCheckoutButton();
         }
         else if( i == 3)
         {
@@ -164,6 +166,7 @@ public class MainController : MonoBehaviour
             drygoodsButton.enabled = true;
             produceButton.gameObject.SetActive(true);
             produceButton.enabled = true;
+            EnabledCheckoutButton();
         }
         else if(i == 0)
         {
@@ -173,6 +176,7 @@ public class MainController : MonoBehaviour
             drygoodsButton.enabled = true;
             produceButton.gameObject.SetActive(true);
             produceButton.enabled = true;
+            checkOutButton.gameObject.SetActive(false);
         }
     }
 
@@ -183,6 +187,7 @@ public class MainController : MonoBehaviour
             this.GetComponent<Info>().UpdateSaverText(activeItem.item.item);
             GetComponent<Cart>().cart.Add(saverItems["jar"]);
             Debug.Log("That's alot of nuts");
+            DestroyImmediate(shoppingList[2]);
         }
         else if (activeItem.item.item.name == "mesh")
         {
@@ -199,6 +204,7 @@ public class MainController : MonoBehaviour
             this.GetComponent<Info>().UpdateSaverText(activeItem.item.item);
             GetComponent<Cart>().cart.Add(saverItems["tupperware"]);
             Debug.Log("Saved with Tupperware");
+            DestroyImmediate(shoppingList[5]);
         }
         else
         {
@@ -242,6 +248,18 @@ public class MainController : MonoBehaviour
         else if (s.Contains("eggs"))
         {
             DestroyImmediate(shoppingList[8]);
+        }
+    }
+    public void CheckOut()
+    {
+        if (activeItem.item.item.name == "bags")
+        {
+            this.GetComponent<Info>().UpdateSaverText(activeItem.item.item);
+
+        }
+        else
+        {
+            GameObject.FindObjectOfType<Plastic>().UpdatePlasticMeter(0.5f);
         }
     }
 }
